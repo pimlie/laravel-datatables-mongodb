@@ -2,14 +2,14 @@
 
 namespace Pimlie\DatatablesMongodb;
 
-use Yajra\Datatables;
+use Yajra\Datatables\Datatables;
 
 /**
  * Class Datatables.
  *
  * @package Pimlie\Datatables
  */
-class DatatablesMongodb extends Datables
+class DatatablesMongodb extends Datatables
 {
     /**
      * Gets query and returns instance of class.

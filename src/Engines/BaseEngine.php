@@ -5,7 +5,7 @@ use Yajra\Datatables\Engines\BaseEngine As YajraBaseEngine;
 use Pimlie\DatatablesMongodb\Processors\DataProcessor;
 
 
-class BaseEngine extends YajraBaseEngine
+abstract class BaseEngine extends YajraBaseEngine
 {
     /**
      * Get processed data

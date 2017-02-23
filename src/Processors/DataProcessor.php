@@ -2,6 +2,8 @@
 namespace Pimlie\DatatablesMongodb\Processors;
 
 use Yajra\Datatables\Processors\DataProcessor As YajraDataProcessor;
+use Illuminate\Support\Facades\Config;
+use Yajra\Datatables\Helper;
 
 class DataProcessor extends YajraDataProcessor
 {
