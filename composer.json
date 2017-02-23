@@ -1,0 +1,27 @@
+{
+    "name": "pimlie/laravel-datatables-mongodb",
+    "description": "Extension for yajra/datatables to support mongodb backend",
+    "keywords": [
+        "laravel",
+        "dataTables",
+        "mongodb"
+    ],
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "pimlie",
+            "email": "pimlie@hotmail.com"
+        }
+    ],
+    "require": {
+        "yajra/datatables": "*",
+        "jenssegers/mongodb" : "*"
+    },
+    "autoload": {
+        "psr-4": {
+            "Pimlie\\Datatables\\": "src/"
+        }
+    },
+    "minimum-stability": "dev"
+}
+~ 
