@@ -61,4 +61,15 @@ class DatatablesMongodb extends Datatables
     {
         return new Engines\MoloquentEngine($builder, $this->request);
     }
+
+    /**
+     * Datatables using Eloquent Builder.
+     *
+     * @param \Illuminate\Database\Eloquent\Builder|mixed $builder
+     * @return \Yajra\Datatables\Engines\EloquentEngine
+     */
+    public function eloquent($builder)
+    {
+        return new Engines\EloquentEngine($builder, $this->request);
+    }
 }

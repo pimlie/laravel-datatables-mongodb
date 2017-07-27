@@ -31,7 +31,7 @@ abstract class BaseEngine extends YajraBaseEngine
      */
     public function isCaseInsensitive()
     {
-        return !! config('datatables-mongodb.search.case_insensitive', false);
+        return config('datatables-mongodb.search.case_insensitive', false);
     }
     
     /**
@@ -53,6 +53,20 @@ abstract class BaseEngine extends YajraBaseEngine
      */
     public function isWildcard()
     {
-        return !! config('datatables-mongodb.search.use_wildcards', false);
+        return config('datatables-mongodb.search.use_wildcards', false);
+    }
+
+
+    /**
+     * Get columns definition.
+     *
+     * @return array
+     */
+    protected function getColumnsDefinition()
+    {
+        $config  = config('datatables-mongodb.columns');
+        $allowed = ['excess', 'escape', 'raw', 'blacklist', 'whitelist'];
+
+        return array_merge(array_only($config, $allowed), $this->columnDef);
     }
 }
