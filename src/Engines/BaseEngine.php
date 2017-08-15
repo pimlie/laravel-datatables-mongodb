@@ -17,7 +17,7 @@ abstract class BaseEngine extends YajraBaseEngine
     {
         $processor = new DataProcessor(
             $this->results(),
-            $this->columnDef,
+            $this->getColumnsDefinition(),
             $this->templates,
             $this->request->input('start')
         );
@@ -67,6 +67,6 @@ abstract class BaseEngine extends YajraBaseEngine
         $config  = config('datatables-mongodb.columns');
         $allowed = ['excess', 'escape', 'raw', 'blacklist', 'whitelist'];
 
-        return array_merge(array_only($config, $allowed), $this->columnDef);
+        return array_replace_recursive(array_only($config, $allowed), $this->columnDef);
     }
 }

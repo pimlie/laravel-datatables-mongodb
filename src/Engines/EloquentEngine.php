@@ -22,6 +22,6 @@ class EloquentEngine extends YajraEloquentEngine
         $config  = config('datatables-mongodb.columns');
         $allowed = ['excess', 'escape', 'raw', 'blacklist', 'whitelist'];
 
-        return array_merge(array_only($config, $allowed), $this->columnDef);
+        return array_replace_recursive(array_only($config, $allowed), $this->columnDef);
     }
 }
