@@ -1,6 +1,6 @@
 {
     "name": "pimlie/laravel-datatables-mongodb",
-    "description": "Extension for yajra/datatables to support mongodb backend",
+    "description": "Laravel DataTables plugin to support Mongodb",
     "keywords": [
         "laravel",
         "dataTables",
@@ -14,13 +14,26 @@
         }
     ],
     "require": {
-        "yajra/laravel-datatables-oracle": "^7.2",
+        "yajra/laravel-datatables-oracle": "^8.0",
         "jenssegers/mongodb" : "^3.1"
     },
     "autoload": {
         "psr-4": {
-            "Pimlie\\Datatables\\": "src/"
+            "Pimlie\\DataTables\\": "src/"
         }
     },
-    "minimum-stability": "dev"
+    "autoload-dev": {
+        "psr-4": {
+            "Pimlie\\DataTables\\Tests\\": "tests/"
+        }
+    },
+    "minimum-stability": "dev",
+    "require-dev": {
+        "Orchestra/Testbench": "^3.5",
+        "squizlabs/php_codesniffer": "^3.1"
+    },
+    "scripts": {
+        "test": "vendor/bin/phpunit",
+        "cs": "vendor/bin/phpcs src/*"
+    }
 }
