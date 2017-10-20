@@ -46,7 +46,8 @@ If you want to use the `datables()` method to automatically use the correct data
         // and need to be listed above them in this list!
         Jenssegers\Mongodb\Eloquent\Builder::class             => 'moloquent',
         Jenssegers\Mongodb\Query\Builder::class                => 'mongodb-query',
-        // This is the Builder class used for HybridRelations, you can remove it if you dont use HybridRelations
+        // This is the Builder class used for HybridRelations,
+        // you can remove it if you dont use HybridRelations
         Jenssegers\Mongodb\Helpers\EloquentBuilder::class      => 'eloquent',
 
         Illuminate\Database\Eloquent\Relations\Relation::class => 'eloquent',
