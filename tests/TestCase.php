@@ -20,7 +20,7 @@ abstract class TestCase extends \Orchestra\Testbench\TestCase
     {
         parent::tearDown();
         
-        //$this->emptyDatabase();
+        $this->emptyDatabase();
     }
 
     protected function emptyDatabase()

@@ -39,6 +39,18 @@ class MongodbDataTableTest extends TestCase
             'recordsFiltered' => 1,
         ]);
     }
+
+    /** @test */
+    public function it_returns_all_records_when_using_trait()
+    {
+        $crawler = $this->call('GET', '/moloquent/roles');
+        $crawler->assertJson([
+            'draw'            => 0,
+            'recordsTotal'    => 2,
+            'recordsFiltered' => 2,
+        ]);
+    }
+
     /** @test */
     public function it_accepts_a_model_using_of_factory()
     {
@@ -80,12 +92,25 @@ class MongodbDataTableTest extends TestCase
         $this->assertInstanceOf(JsonResponse::class, $response);
     }
 
+    /** @test */
+    public function it_accepts_a_model_using_trait()
+    {
+        $dataTable = Role::dataTable();
+        $response  = $dataTable->make(true);
+        $this->assertInstanceOf(MongodbDataTable::class, $dataTable);
+        $this->assertInstanceOf(JsonResponse::class, $response);
+    }
+
     protected function setUp()
     {
         parent::setUp();
 
         $this->app['router']->get('/moloquent/users', function () {
             return datatables(User::query())->make('true');
+        });
+
+        $this->app['router']->get('/moloquent/roles', function () {
+            return Role::dataTable()->make('true');
         });
     }
 }

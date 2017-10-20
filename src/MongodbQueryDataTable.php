@@ -4,10 +4,6 @@ namespace Pimlie\DataTables;
 
 use Jenssegers\Mongodb\Eloquent\Builder as MoloquentBuilder;
 use Jenssegers\Mongodb\Query\Builder;
-use Jenssegers\Mongodb\Relations\BelongsTo;
-use Jenssegers\Mongodb\Relations\BelongsToMany;
-use Jenssegers\Mongodb\Relations\HasOneOrMany;
-use Jenssegers\Mongodb\Relations\MorphToMany;
 use Illuminate\Support\Str;
 use Yajra\DataTables\QueryDataTable;
 use Yajra\DataTables\Utilities\Helper;

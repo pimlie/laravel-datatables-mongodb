@@ -2,6 +2,7 @@
 
 namespace Pimlie\DataTables;
 
+use Jenssegers\Mongodb\Eloquent\Model;
 use Jenssegers\Mongodb\Eloquent\Builder;
 
 class MongodbDataTable extends MongodbQueryDataTable
@@ -18,7 +19,7 @@ class MongodbDataTable extends MongodbQueryDataTable
      */
     public function __construct($model)
     {
-        $builder = $model instanceof Builder ? $model : $model->getQuery();
+        $builder = $model instanceof Model || $model instanceof Builder ? $model : $model->getQuery();
         parent::__construct($builder->getQuery());
 
         $this->query = $builder;
