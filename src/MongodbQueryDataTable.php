@@ -110,7 +110,7 @@ class MongodbQueryDataTable extends QueryBuilderDataTable
     {
         if ($this->config->isWildcard()) {
             $keyword = Helper::wildcardString($keyword, '.*', $this->config->isCaseInsensitive());
-        } else if($this->config->isCaseInsensitive()) {
+        } elseif ($this->config->isCaseInsensitive()) {
             $keyword = Str::lower($keyword);
         }
 

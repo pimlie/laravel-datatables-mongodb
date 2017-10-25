@@ -20,7 +20,8 @@ class MongodbDataTable extends MongodbQueryDataTable
      */
     public static function canCreate($source)
     {
-        return $source instanceof Model || $source instanceof Builder || strpos(get_class($source), 'Jenssegers\Mongodb\Relations') !== false;
+        return $source instanceof Model || $source instanceof Builder ||
+            strpos(get_class($source), 'Jenssegers\Mongodb\Relations') !== false;
     }
 
     /**
