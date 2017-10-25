@@ -22,19 +22,18 @@ This plugin provides most functionalities described in the Laravel Datatables do
 
 Check the Laravel DataTables configuration for how to configure and use it.
 
-If you want to use the `datables()` method to automatically use the correct datatables engine, you _either_ have to add the service provider:
+If you want the `datables()` and/or `of` methods to automatically use the correct datatables engine,
 
+you __either__ have to add the service provider:
 ```
 'providers' => [
     ...,
     Yajra\DataTables\DataTablesServiceProvider::class,
     Pimlie\DataTables\MongodbDataTablesServiceProvider::class, // add _after_ Yajra's ServiceProvider
 ]
-
 ```
 
-_or_ open the `config/datatables.php` file and add the engines manually to the config:
-
+__or__ open the `config/datatables.php` file and add the engines manually to the config:
 ```php
     /**
      * Datatables list of available engines.
