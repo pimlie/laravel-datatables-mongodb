@@ -130,7 +130,7 @@ class MongodbDataTableTestServiceProvider extends ServiceProviderTestCase
         });
 
         $this->app['router']->get('/moloquent/userRoles', function () {
-            return datatables((new User(1))->roles())->make('true');
+            return datatables(User::first()->roles())->make('true');
         });
 
         $this->app['router']->get('/moloquent/roles', function () {

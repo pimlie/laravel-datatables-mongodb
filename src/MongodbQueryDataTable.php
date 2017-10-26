@@ -5,10 +5,10 @@ namespace Pimlie\DataTables;
 use Jenssegers\Mongodb\Eloquent\Builder as MoloquentBuilder;
 use Jenssegers\Mongodb\Query\Builder;
 use Illuminate\Support\Str;
-use Yajra\DataTables\QueryBuilderDataTable;
+use Yajra\DataTables\QueryDataTable;
 use Yajra\DataTables\Utilities\Helper;
 
-class MongodbQueryDataTable extends QueryBuilderDataTable
+class MongodbQueryDataTable extends QueryDataTable
 {
     /**
      * Can the DataTable engine be created with these parameters.
