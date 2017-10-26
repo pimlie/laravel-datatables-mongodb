@@ -13,6 +13,18 @@ class MongodbDataTable extends MongodbQueryDataTable
     protected $query;
 
     /**
+     * Can the DataTable engine be created with these parameters.
+     *
+     * @param mixed $source
+     * @return boolean
+     */
+    public static function canCreate($source)
+    {
+        return $source instanceof Model || $source instanceof Builder ||
+            strpos(get_class($source), 'Jenssegers\Mongodb\Relations') !== false;
+    }
+
+    /**
      * MongodbDataTable constructor.
      *
      * @param mixed $model

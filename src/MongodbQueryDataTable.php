@@ -11,6 +11,17 @@ use Yajra\DataTables\Utilities\Helper;
 class MongodbQueryDataTable extends QueryDataTable
 {
     /**
+     * Can the DataTable engine be created with these parameters.
+     *
+     * @param mixed $source
+     * @return boolean
+     */
+    public static function canCreate($source)
+    {
+        return $source instanceof Builder;
+    }
+
+    /**
      * @param \Jenssegers\Mongodb\Query\Builder $builder
      */
     public function __construct(Builder $builder)
@@ -97,13 +108,10 @@ class MongodbQueryDataTable extends QueryDataTable
 
     protected function prepareKeyword($keyword)
     {
-        if ($this->config->isCaseInsensitive()) {
-            $keyword = Str::lower($keyword);
-        }
-
         if ($this->config->isWildcard()) {
-            // not supported for now
-            //$keyword = Helper::wildcardLikeString($keyword);
+            $keyword = Helper::wildcardString($keyword, '.*', $this->config->isCaseInsensitive());
+        } elseif ($this->config->isCaseInsensitive()) {
+            $keyword = Str::lower($keyword);
         }
 
         if ($this->config->isSmartSearch()) {

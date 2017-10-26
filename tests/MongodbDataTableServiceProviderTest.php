@@ -6,11 +6,11 @@ use Illuminate\Http\JsonResponse;
 use Yajra\DataTables\DataTables;
 use Yajra\DataTables\Facades\DataTables as DatatablesFacade;
 use Pimlie\DataTables\MongodbDataTable;
-use Pimlie\DataTables\Tests\TestCase;
+use Pimlie\DataTables\Tests\ServiceProviderTestCase;
 use Pimlie\DataTables\Tests\Models\User;
 use Pimlie\DataTables\Tests\Models\Role;
 
-class MongodbDataTableTest extends TestCase
+class MongodbDataTableTestServiceProvider extends ServiceProviderTestCase
 {
     /** @test */
     public function it_returns_all_records_when_no_parameters_is_passed()
