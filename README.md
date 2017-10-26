@@ -7,7 +7,7 @@
 This package is a plugin for [Laravel DataTables](https://github.com/yajra/laravel-datatables) to support Mongodb using [Laravel Mongodb](https://github.com/jenssegers/laravel-mongodb/)
 
 ## Requirements
-- [Laravel DataTables >=8.0](https://github.com/yajra/laravel-datatables)
+- [Laravel DataTables >=8.3](https://github.com/yajra/laravel-datatables)
 - [Laravel Mongodb](https://github.com/jenssegers/laravel-mongodb)
 
 ## Documentation
@@ -16,7 +16,7 @@ This package is a plugin for [Laravel DataTables](https://github.com/yajra/larav
 This plugin provides most functionalities described in the Laravel Datatables documentation. See `Known issues` below
 
 ## Installation
-`composer require pimlie/laravel-datatables-mongodb:^1.0`
+`composer require pimlie/laravel-datatables-mongodb:^1.1`
 
 ## Configure
 
