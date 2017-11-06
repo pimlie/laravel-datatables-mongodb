@@ -27,7 +27,14 @@
             "Pimlie\\DataTables\\Tests\\": "tests/"
         }
     },
-    "minimum-stability": "dev",
+  "extra": {
+        "laravel": {
+          "providers": [
+            "Pimlie\\DataTables\\MongodbDataTablesServiceProvider"
+          ]
+        }
+    },
+    "minimum-stability": "stable",
     "require-dev": {
         "Orchestra/Testbench": "^3.5",
         "squizlabs/php_codesniffer": "^3.1"
