@@ -24,7 +24,17 @@ Check the Laravel DataTables configuration for how to configure and use it.
 
 If you want the `datables()` and/or `of` methods to automatically use the correct datatables engine,
 
-you __either__ have to add the service provider:
+Unfortunately we cant use auto-discovery yet, this package will be discoverd before laravel-datatables is and that will overwrite the engines config at the moment
+
+~~> Although this package has a dependency on laravel-datatables, you need to explictly require the package as auto-discovery works based on the packages listed in the dependencies section of your composer.json.~~
+
+```
+composer require yajra/laravel-datatables-oracle:"~8.0"
+composer require pimlie/laravel-datatables-mongodb:^1.1
+```
+
+so you __either__ you have to add the service provide:
+
 ```
 'providers' => [
     ...,
