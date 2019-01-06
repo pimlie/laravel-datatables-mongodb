@@ -7,7 +7,7 @@ use Yajra\DataTables\DataTables;
 
 class MongodbDataTablesServiceProvider extends ServiceProvider
 {
-    static protected $engines = [
+    protected static $engines = [
         'moloquent'      => MongodbDataTable::class,
         'mongodb-query'  => MongodbQueryDataTable::class,
         'mongodb-hybrid' => HybridMongodbQueryDataTable::class,
