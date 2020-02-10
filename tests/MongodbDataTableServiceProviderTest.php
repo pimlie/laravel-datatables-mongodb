@@ -121,7 +121,7 @@ class MongodbDataTableTestServiceProvider extends ServiceProviderTestCase
         ]);
     }
 
-    protected function setUp()
+    protected function setUp(): void
     {
         parent::setUp();
 

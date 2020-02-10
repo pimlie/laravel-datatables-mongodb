@@ -77,7 +77,7 @@ abstract class HasOneRelationTest extends TestCase
         return $this->call('GET', '/relations/hasOne', array_merge($data, $params));
     }
 
-    protected function setUp()
+    protected function setUp(): void
     {
         parent::setUp();
 

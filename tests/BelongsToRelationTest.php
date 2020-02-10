@@ -77,7 +77,7 @@ abstract class BelongsToRelationTest extends TestCase
         return $this->call('GET', '/relations/belongsTo', array_merge($data, $params));
     }
 
-    protected function setUp()
+    protected function setUp(): void
     {
         parent::setUp();
 

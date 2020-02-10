@@ -9,17 +9,17 @@ use Pimlie\DataTables\Tests\Models\Heart;
 
 abstract class TestCase extends \Orchestra\Testbench\TestCase
 {
-    protected function setUp()
+    protected function setUp(): void
     {
         parent::setUp();
 
         $this->seedDatabase();
     }
 
-    protected function tearDown()
+    protected function tearDown(): void
     {
         parent::tearDown();
-        
+
         $this->emptyDatabase();
     }
 
@@ -85,7 +85,7 @@ abstract class TestCase extends \Orchestra\Testbench\TestCase
         $app['config']->set('datatables', require('config/datatables.php'));
         $app['config']->set('database.default', 'mongodb');
     }
-    
+
     protected function getPackageAliases($app)
     {
         return [

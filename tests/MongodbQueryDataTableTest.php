@@ -162,10 +162,10 @@ class MongodbQueryDataTableTest extends TestCase
         ]);
 
         $queries = $crawler->json()['queries'];
-        $this->assertContains('{"foo":"Record-19"}', $queries[1]['query']);
+        $this->assertStringContainsString('{"foo":"Record-19"}', $queries[1]['query']);
     }
 
-    protected function setUp()
+    protected function setUp(): void
     {
         parent::setUp();
 
